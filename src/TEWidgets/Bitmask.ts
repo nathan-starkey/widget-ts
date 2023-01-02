@@ -14,7 +14,7 @@ namespace TagEditor.Widgets {
       let inputs = [];
       
       table.classList.add("te-form-control");
-      table.classList.add("te-bitmask");
+      table.classList.add("te-bitmask-widget");
 
       for (let option of options) {
         let tr = document.createElement("tr");

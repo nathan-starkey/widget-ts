@@ -155,6 +155,87 @@ var TagEditor;
 (function (TagEditor) {
     var Widgets;
     (function (Widgets) {
+        class Vector extends WidgetBase.Widget {
+            #element;
+            #inputs;
+            #isDisabled;
+            constructor(name, size, labels) {
+                super(name);
+                let container = document.createElement("div");
+                let inputs = [];
+                container.classList.add("te-vector-widget");
+                for (let i = 0; i < size; ++i) {
+                    let input = document.createElement("input");
+                    input.type = "number";
+                    input.valueAsNumber = 0;
+                    input.classList.add("te-form-control");
+                    input.addEventListener("change", () => this.valueChanged());
+                    inputs.push(input);
+                    if (labels[i] != undefined) {
+                        container.append(labels[i]);
+                    }
+                    container.append(input);
+                }
+                if (labels[inputs.length] != undefined) {
+                    container.append(labels[inputs.length]);
+                }
+                this.#element = container;
+                this.#inputs = inputs;
+                this.#isDisabled = false;
+            }
+            setValue(value) {
+                value ||= [];
+                for (let i = 0; i < this.#inputs.length; ++i) {
+                    let input = this.#inputs[i];
+                    let val = globalThis.Number(value[i]) || 0;
+                    input.valueAsNumber = val;
+                }
+                this.valueChanged();
+            }
+            setIsDisabled(isDisabled) {
+                this.#isDisabled = isDisabled;
+                for (let input of this.#inputs) {
+                    input.disabled = isDisabled;
+                }
+                if (isDisabled) {
+                    for (let input of this.#inputs) {
+                        input.valueAsNumber = 0;
+                    }
+                    this.#element.classList.add("disabled");
+                }
+                else {
+                    this.#element.classList.remove("disabled");
+                }
+            }
+            getValue() {
+                return this.#inputs.map(input => input.valueAsNumber);
+            }
+            getIsDisabled() {
+                return this.#isDisabled;
+            }
+            getElement() {
+                return this.#element;
+            }
+        }
+        Widgets.Vector = Vector;
+    })(Widgets = TagEditor.Widgets || (TagEditor.Widgets = {}));
+})(TagEditor || (TagEditor = {}));
+var TagEditor;
+(function (TagEditor) {
+    var Widgets;
+    (function (Widgets) {
+        class Range extends Widgets.Vector {
+            constructor(name) {
+                super(name, 2, [undefined, " to ", undefined]);
+            }
+        }
+        Widgets.Range = Range;
+    })(Widgets = TagEditor.Widgets || (TagEditor.Widgets = {}));
+})(TagEditor || (TagEditor = {}));
+var TagEditor;
+(function (TagEditor) {
+    var Widgets;
+    (function (Widgets) {
         class Enum extends WidgetBase.Widget {
             #element;
             #options;
@@ -207,7 +288,7 @@ var TagEditor;
                 let tbody = document.createElement("tbody");
                 let inputs = [];
                 table.classList.add("te-form-control");
-                table.classList.add("te-bitmask");
+                table.classList.add("te-bitmask-widget");
                 for (let option of options) {
                     let tr = document.createElement("tr");
                     let td0 = document.createElement("td");
