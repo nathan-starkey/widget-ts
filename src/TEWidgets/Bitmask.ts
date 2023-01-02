@@ -27,6 +27,7 @@ namespace TagEditor.Widgets {
         inputs.push(input);
 
         tr.addEventListener("click", () => input.click());
+        input.addEventListener("click", ev => ev.stopImmediatePropagation());
         input.addEventListener("change", () => this.valueChanged());
 
         td1.append(input);

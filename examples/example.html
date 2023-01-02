@@ -4,18 +4,43 @@
     <title>Widget TS Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../dist/TEWidgets.css">
+    <link rel="stylesheet" href="../dist/te-widgets.css">
     <style>
       body {
-        background-color: #eee;
         user-select: none;
         max-width: 30em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow-y: scroll;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+      }
+
+      #output {
+        width: 100%;
+        height: 20em;
+        font-family: 'Courier New', Courier, monospace;
       }
     </style>
   </head>
   <body>
-    <script src="../dist/WidgetBase.js"></script>
-    <script src="../dist/TEWidgets.js"></script>
+    <h1>Widget TS Example</h1>
+    
+    <div id="container"></div>
+
+    <br>
+    <button class="te-form-control" onclick="generate();">Generate output as JSON</button>
+    
+    <br>
+    <br>
+    <textarea id="output" class="te-form-control"></textarea>
+
+    <script src="../dist/bundle.js"></script>
     <script src="example.js"></script>
   </body>
 </html>
