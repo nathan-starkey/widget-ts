@@ -1,18 +1,13 @@
+@echo off
 setlocal enableextensions enabledelayedexpansion
-echo off
 call tsc
-pushd dist
 
-set modules=WidgetBase TEWidgets
-set WidgetBase=Widget ParentWidget StructWidget ArrayWidget
-set TEWidgets=String Number Boolean Enum Bitmask Struct Array
-
-for %%i in (%modules%) do (
-  echo %%i.js
-  if exist "%%i.js" del "%%i.js"
-  for %%j in (!%%i!) do type "%%i\%%j.js">>"%%i.js"
-  rem rmdir "%%i" /s /q
-)
-
+pushd dist\WidgetBase
+copy /y /b Widget.js + ParentWidget.js + StructWidget.js + ArrayWidget.js ..\WidgetBase.js
 popd
+
+pushd dist\TEWidgets
+copy /y /b String.js + Number.js + Boolean.js + Enum.js + Bitmask.js + Struct.js + Array.js ..\TEWidgets.js
+popd
+
 endlocal
