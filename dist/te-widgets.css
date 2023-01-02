@@ -12,12 +12,12 @@ button.te-form-control {
   background-color: #eee;
 }
 
-button.te-form-control:hover,
-.te-bitmask-widget tr:active {
+button.te-form-control:not(:disabled):hover,
+.te-bitmask-widget:not(.disabled) tr:active {
   background-image: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
 }
 
-button.te-form-control:active {
+button.te-form-control:not(:disabled):active {
   background-image: linear-gradient(rgba(0, 0, 0, .15), rgba(0, 0, 0, .15));
 }
 
