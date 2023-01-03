@@ -1,6 +1,6 @@
 /// <reference path="../WidgetBase/StructWidget.ts" />
 
-namespace TagEditor.Widgets {
+namespace Widgets {
   export class Struct extends WidgetBase.StructWidget {
     #element: HTMLTableElement;
 

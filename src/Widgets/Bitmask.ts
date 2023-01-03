@@ -1,6 +1,6 @@
 /// <reference path="../WidgetBase/Widget.ts" />
 
-namespace TagEditor.Widgets {
+namespace Widgets {
   export class Bitmask extends WidgetBase.Widget {
     #element: HTMLTableElement;
     #inputs: HTMLInputElement[];

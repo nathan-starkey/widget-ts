@@ -1,23 +1,22 @@
 /// <reference path="../WidgetBase/Widget.ts" />
 
-namespace TagEditor.Widgets {
-  export class Number extends WidgetBase.Widget {
+namespace Widgets {
+  export class Boolean extends WidgetBase.Widget {
     #element: HTMLInputElement;
 
     constructor(name: string) {
       super(name);
 
       this.#element = document.createElement("input");
-      this.#element.type = "number";
-      this.#element.valueAsNumber = 0;
+      this.#element.type = "checkbox";
       this.#element.addEventListener("change", () => this.valueChanged());
       this.#element.classList.add("te-form-control");
     }
 
-    setValue(value: number | undefined) {
-      value = globalThis.Number(value) || 0;
+    setValue(value: boolean | undefined) {
+      value = globalThis.Boolean(value);
 
-      this.#element.valueAsNumber = value;
+      this.#element.checked = value;
       this.valueChanged();
     }
 
@@ -25,12 +24,12 @@ namespace TagEditor.Widgets {
       this.#element.disabled = isDisabled;
 
       if (isDisabled) {
-        this.#element.valueAsNumber = 0;
+        this.#element.checked = false;
       }
     }
 
-    getValue(): number {
-      return this.#element.valueAsNumber;
+    getValue(): boolean {
+      return this.#element.checked;
     }
 
     getIsDisabled(): boolean {

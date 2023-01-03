@@ -1,6 +1,6 @@
 /// <reference path="../WidgetBase/Widget.ts" />
 
-namespace TagEditor.Widgets {
+namespace Widgets {
   export class Vector extends WidgetBase.Widget {
     #element: HTMLDivElement;
     #inputs: HTMLInputElement[];

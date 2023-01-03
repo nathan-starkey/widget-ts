@@ -1,7 +1,7 @@
 /// <reference path="../WidgetBase/ParentWidget.ts" />
 /// <reference path="../WidgetBase/ArrayWidget.ts" />
 
-namespace TagEditor.Widgets {
+namespace Widgets {
   export class Array extends WidgetBase.ArrayWidget {
     #element: HTMLDivElement;
     #buttons: {add: HTMLButtonElement, remove: HTMLButtonElement, moveUp: HTMLButtonElement, moveDown: HTMLButtonElement};

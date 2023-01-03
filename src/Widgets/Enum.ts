@@ -1,21 +1,28 @@
 /// <reference path="../WidgetBase/Widget.ts" />
 
-namespace TagEditor.Widgets {
-  export class String extends WidgetBase.Widget {
-    #element: HTMLInputElement | HTMLTextAreaElement;
+namespace Widgets {
+  export class Enum extends WidgetBase.Widget {
+    #element: HTMLSelectElement;
+    #options: string[];
 
-    constructor(name: string, multiline: boolean = false) {
+    constructor(name: string, options: string[]) {
       super(name);
 
-      this.#element = document.createElement(multiline ? "textarea" : "input");
+      this.#element = document.createElement("select");
       this.#element.addEventListener("change", () => this.valueChanged());
       this.#element.classList.add("te-form-control");
+      this.#options = options;
+
+      for (let option of options) {
+        this.#element.options.add(new Option(option));
+      }
     }
 
     setValue(value: string | undefined) {
-      value = globalThis.String(value || "");
+      let index = this.#options.indexOf(value);
 
-      this.#element.value = value;
+      index = Math.max(index, 0);
+      this.#element.selectedIndex = index;
       this.valueChanged();
     }
 
@@ -23,7 +30,7 @@ namespace TagEditor.Widgets {
       this.#element.disabled = isDisabled;
 
       if (isDisabled) {
-        this.#element.value = "";
+        this.#element.selectedIndex = 0;
       }
     }
 
@@ -35,7 +42,7 @@ namespace TagEditor.Widgets {
       return this.#element.disabled;
     }
 
-    getElement(): HTMLInputElement | HTMLTextAreaElement {
+    getElement(): HTMLSelectElement {
       return this.#element;
     }
   }

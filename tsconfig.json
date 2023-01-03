@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "rootDir": "src",
-    "outFile": "dist/bundle.js",
+    "outFile": "dist/widgets.js",
     "removeComments": true
   }
 }

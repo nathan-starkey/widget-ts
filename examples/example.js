@@ -1,6 +1,3 @@
-// Use an alias for TagEditor.Widgets
-const Widgets = TagEditor.Widgets;
-
 // Create a hierarchical widget structure
 const root = new Widgets.Array("creatures", new Widgets.Struct("", [
   new Widgets.String("id"),
