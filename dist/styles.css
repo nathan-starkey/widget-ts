@@ -1,0 +1,82 @@
+.form-outer {
+  background-color: #eee;
+  font-size: 12px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+.form-inner {
+  background-color: white;
+  display: inline-block;
+  text-align: initial;
+  padding: 4em;
+}
+
+.form-title {
+  font-weight: normal;
+  margin: 0 0 18px 0;
+  text-align: center;
+}
+
+input,
+textarea,
+select {
+  background: white;
+  resize: vertical;
+  width: 15em;
+}
+
+input[type=number],
+input[type=checkbox] {
+  width: 7.5em;
+}
+
+button {
+  background: #eee;
+}
+
+input,
+textarea,
+select,
+button {
+  border: black 1px solid;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  border-color: #aaa;
+}
+
+.disabled {
+  color: #aaa;
+}
+
+.widget-array {
+  border-left: .5em lightgray solid;
+  display: inline-block;
+}
+
+.widget-array-header {
+  background-color: lightgray;
+  padding: .75em;
+}
+
+.widget-array-header>label {
+  padding: 0 1em 0 .25em;
+  margin-left: 2px;
+}
+
+.widget-array-header>button {
+  margin-left: .25em;
+}
+
+.widget-array-body {
+  padding: 1em;
+}
