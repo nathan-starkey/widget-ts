@@ -54,6 +54,14 @@ button:disabled {
   border-color: #aaa;
 }
 
+button:not(:disabled):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
+}
+
+button:not(:disabled):active {
+  background-image: linear-gradient(rgba(0, 0, 0, .15), rgba(0, 0, 0, .15));
+}
+
 .disabled {
   color: #aaa;
 }
