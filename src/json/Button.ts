@@ -4,7 +4,7 @@ import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 export class Button<TRelatedNode extends HTMLWidget<any, any>> extends HTMLWidget<TRelatedNode, never> {
   private button: HTMLButtonElement = document.createElement("button");
 
-  constructor(label: string, callback: () => string) {
+  constructor(label: string, callback: () => void) {
     super();
 
     this.button.innerText = label;
