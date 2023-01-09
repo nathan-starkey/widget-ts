@@ -5,7 +5,7 @@ export class Object extends HTMLWidget<HTMLWidget<any, any>, {}> {
   private labels: string[];
   private table: HTMLTableElement = document.createElement("table");
 
-  constructor(children: [[string, HTMLWidget<any, any>]]) {
+  constructor(children: [string, HTMLWidget<any, any>][]) {
     super();
 
     this.labels = children.map(child => child[0]);
