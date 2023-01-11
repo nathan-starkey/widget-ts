@@ -1,4 +1,4 @@
-import * as Widgets from "../dist/json/index.js";
+const Widgets = WidgetTS.json;
 
 let widget = new Widgets.Array(new Widgets.Object([
   ["id", new Widgets.String()],
