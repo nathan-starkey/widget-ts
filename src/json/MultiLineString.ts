@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class MultiLineString<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends HTMLWidget<TRelatedNode, string> {
+export class WMultiLineString<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends HTMLWidget<TRelatedNode, string> {
   private input: HTMLTextAreaElement = document.createElement("textarea");
 
   constructor() {

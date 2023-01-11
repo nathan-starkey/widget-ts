@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class Number<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends HTMLWidget<TRelatedNode, number> {
+export class WNumber<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends HTMLWidget<TRelatedNode, number> {
   private input: HTMLInputElement = document.createElement("input");
 
   constructor() {
@@ -21,7 +21,7 @@ export class Number<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends 
   }
 
   setValue(value: any): void {
-    this.input.valueAsNumber = globalThis.Number(value) || 0;
+    this.input.valueAsNumber = Number(value) || 0;
   }
 
   getValue(): number {

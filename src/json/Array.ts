@@ -2,7 +2,7 @@ import { DisplayMode, HTMLWidget } from "../core/HTMLWidget";
 import { ArrayBase } from "../core/ArrayBase.js";
 
 
-export class Array<TRelatedNode extends HTMLWidget<any, any>, TValue> extends ArrayBase<TRelatedNode, TValue> {
+export class WArray<TRelatedNode extends HTMLWidget<any, any>, TValue> extends ArrayBase<TRelatedNode, TValue> {
   private outer = document.createElement("div");
   private header = document.createElement("div");
   private body = document.createElement("div");

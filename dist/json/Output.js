@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class Output extends HTMLWidget {
+export class WOutput extends HTMLWidget {
     output = document.createElement("output");
     constructor() {
         super();

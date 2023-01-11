@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class Object extends HTMLWidget {
+export class WObject extends HTMLWidget {
     labels;
     table = document.createElement("table");
     constructor(children) {

@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class MultiLineString extends HTMLWidget {
+export class WMultiLineString extends HTMLWidget {
     input = document.createElement("textarea");
     constructor() {
         super();

@@ -1,5 +1,5 @@
 import { ArrayBase } from "../core/ArrayBase.js";
-export class Array extends ArrayBase {
+export class WArray extends ArrayBase {
     outer = document.createElement("div");
     header = document.createElement("div");
     body = document.createElement("div");

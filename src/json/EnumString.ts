@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class EnumString<TRelatedNode extends HTMLWidget<any, any>> extends HTMLWidget<HTMLWidget<TRelatedNode, any>, string> {
+export class WEnumString<TRelatedNode extends HTMLWidget<any, any>> extends HTMLWidget<HTMLWidget<TRelatedNode, any>, string> {
   private select: HTMLSelectElement = document.createElement("select");
   private values: string[];
 

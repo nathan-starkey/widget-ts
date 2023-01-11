@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class Button extends HTMLWidget {
+export class WButton extends HTMLWidget {
     button = document.createElement("button");
     constructor(label, callback) {
         super();

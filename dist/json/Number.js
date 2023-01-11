@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class Number extends HTMLWidget {
+export class WNumber extends HTMLWidget {
     input = document.createElement("input");
     constructor() {
         super();
@@ -14,7 +14,7 @@ export class Number extends HTMLWidget {
         return "inline";
     }
     setValue(value) {
-        this.input.valueAsNumber = globalThis.Number(value) || 0;
+        this.input.valueAsNumber = Number(value) || 0;
     }
     getValue() {
         return this.input.valueAsNumber;

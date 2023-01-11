@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class String extends HTMLWidget {
+export class WString extends HTMLWidget {
     input = document.createElement("input");
     constructor() {
         super();

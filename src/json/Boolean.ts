@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class Boolean<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends HTMLWidget<TRelatedNode, boolean> {
+export class WBoolean<TRelatedNode extends HTMLWidget<TRelatedNode, any>> extends HTMLWidget<TRelatedNode, boolean> {
   private input: HTMLInputElement = document.createElement("input");
 
   constructor() {

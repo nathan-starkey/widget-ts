@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class EnumString extends HTMLWidget {
+export class WEnumString extends HTMLWidget {
     select = document.createElement("select");
     values;
     constructor(values) {

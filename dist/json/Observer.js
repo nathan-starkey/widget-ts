@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class Observer extends HTMLWidget {
+export class WObserver extends HTMLWidget {
     child;
     callback;
     constructor(child, callback) {

@@ -1,5 +1,5 @@
 import { HTMLWidget } from "../core/HTMLWidget.js";
-export class Boolean extends HTMLWidget {
+export class WBoolean extends HTMLWidget {
     input = document.createElement("input");
     constructor() {
         super();

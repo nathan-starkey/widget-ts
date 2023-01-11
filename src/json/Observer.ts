@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class Observer<TRelatedNode extends HTMLWidget<any, any>, TValue> extends HTMLWidget<any, TValue> {
+export class WObserver<TRelatedNode extends HTMLWidget<any, any>, TValue> extends HTMLWidget<any, TValue> {
   private child: TRelatedNode;
   private callback: (child: TRelatedNode) => void;
 

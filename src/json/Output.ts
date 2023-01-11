@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class Output<TRelatedNode extends HTMLWidget<any, any>> extends HTMLWidget<TRelatedNode, never> {
+export class WOutput<TRelatedNode extends HTMLWidget<any, any>> extends HTMLWidget<TRelatedNode, never> {
   private output: HTMLOutputElement = document.createElement("output");
 
   constructor() {

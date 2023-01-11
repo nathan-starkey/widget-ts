@@ -1,7 +1,7 @@
 import { DisplayMode, HTMLWidget } from "../core/HTMLWidget.js";
 
 
-export class Object extends HTMLWidget<HTMLWidget<any, any>, {}> {
+export class WObject extends HTMLWidget<HTMLWidget<any, any>, {}> {
   private labels: string[];
   private table: HTMLTableElement = document.createElement("table");
 
